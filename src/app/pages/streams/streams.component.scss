@@ -1,0 +1,25 @@
+@import '../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .add-stream {
+    background-color: green;
+  }
+}
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.mat-column {
+  //max-width: 80px;
+  //overflow: hidden;
+  //white-space: nowrap;
+  //text-overflow: ellipsis; /* Thêm dấu '...' khi văn bản dài */
+}

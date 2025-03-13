@@ -1,0 +1,39 @@
+<nb-card>
+  <nb-card-header>Add stream</nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="streamForm">
+      <input type="text" nbInput fullWidth placeholder="Name stream" formControlName="name">
+      <input type="text" nbInput fullWidth placeholder="Group" formControlName="group">
+      <input type="text" nbInput fullWidth placeholder="Logo url" formControlName="logoUrl">
+      <div class="d-flex">
+        <input nbInput
+               placeholder="Start date"
+               [nbDatepicker]="datepicker" formControlName="startDate">
+        <nb-datepicker #datepicker></nb-datepicker>
+        <input nbInput
+               placeholder="Start date"
+               [nbTimepicker]="timepicker" formControlName="startTime">
+        <nb-timepicker #timepicker></nb-timepicker>
+      </div>
+
+      <div class="stream-url-inputs" formGroupName="streamUrls">
+        <input type="text" nbInput fullWidth placeholder="Stream url 1" formControlName="streamUrl1">
+        <input type="text" nbInput fullWidth placeholder="Referer url 1" formControlName="refererUrl1">
+      </div>
+
+      <div class="stream-url-inputs" formGroupName="streamUrls">
+        <input type="text" nbInput fullWidth placeholder="Stream url 2" formControlName="streamUrl2">
+        <input type="text" nbInput fullWidth placeholder="Referer url 2" formControlName="refererUrl2">
+      </div>
+
+      <div class="stream-url-inputs" formGroupName="streamUrls">
+        <input type="text" nbInput fullWidth placeholder="Stream url 3" formControlName="streamUrl3">
+        <input type="text" nbInput fullWidth placeholder="Referer url 3" formControlName="refererUrl3">
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
+    <button nbButton status="success" (click)="submit()">Submit</button>
+  </nb-card-footer>
+</nb-card>

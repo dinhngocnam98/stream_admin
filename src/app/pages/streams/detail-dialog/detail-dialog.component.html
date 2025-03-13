@@ -1,0 +1,80 @@
+<nb-card>
+  <nb-card-header>{{ title }}</nb-card-header>
+  <nb-card-body>
+    <div class="w-100">
+      <div class="row show-grid">
+        <div class="col-6 col-md-4">Name:</div>
+        <div class="col-12 col-md-8">
+          <p title="{{streamDetail.name}}">
+            {{ streamDetail.name }}
+          </p>
+        </div>
+      </div>
+      <div class="row show-grid">
+        <div class="col-6 col-md-4">Group:</div>
+        <div class="col-12 col-md-8">
+          <p title="{{streamDetail.group}}">
+            {{ streamDetail.group }}
+          </p>
+        </div>
+      </div>
+      <div class="row show-grid">
+        <div class="col-6 col-md-4">Start time (UTC):</div>
+        <div class="col-12 col-md-8">
+          <p title="{{streamDetail.startTime}}">
+            {{ streamDetail.startTime }}
+          </p>
+        </div>
+      </div>
+      <div class="row show-grid">
+        <div class="col-4 col-md-4">Logo url:</div>
+        <div class="col-12 col-md-8">
+          <p title="{{streamDetail.logoUrl}}">
+            {{ streamDetail.logoUrl }}
+          </p>
+        </div>
+      </div>
+
+      <table mat-table [dataSource]="dataSource"
+             class="mat-elevation-z8">
+        <ng-container matColumnDef="streamUrl">
+          <th mat-header-cell *matHeaderCellDef>
+            Stream url
+          </th>
+          <td mat-cell *matCellDef="let element" class="mat-column-streamUrl"
+              matTooltip="{{element.streamUrl}}"> {{ element.streamUrl }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="refererUrl">
+          <th mat-header-cell *matHeaderCellDef>
+            Referer url
+          </th>
+          <td mat-cell *matCellDef="let element" class="mat-column-streamUrl"
+              matTooltip="{{element.refererUrl}}"> {{ element.refererUrl }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="isLive">
+          <th mat-header-cell *matHeaderCellDef>
+            Live
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <nb-button *ngIf="!element.isLive" (click)="pressLive(element)">
+              <nb-icon icon="play-circle-outline" status="success"></nb-icon>
+            </nb-button>
+            <nb-button *ngIf="element.isLive" (click)="pressLive(element)">
+              <nb-icon icon="pause-circle-outline" status="danger"></nb-icon>
+            </nb-button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton hero status="primary" (click)="dismiss()">Close</button>
+  </nb-card-footer>
+</nb-card>

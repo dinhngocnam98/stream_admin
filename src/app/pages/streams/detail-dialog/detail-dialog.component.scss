@@ -1,0 +1,65 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  @media (max-width: 768px) {
+    .col-12 {
+      flex: 0 0 100%;
+      max-width: 390px;
+    }
+  }
+
+  nb-card {
+    max-width: 900px;
+    max-height: 500px;
+  }
+  .show-grid {
+    .row {
+      margin: -0.5rem;
+    }
+
+    div[class^=col-] {
+      padding: 0.5rem;
+      box-sizing: border-box;
+      p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      div {
+        text-align: center;
+        background-color: nb-theme(background-basic-color-2);
+        padding: 0.75rem 0.25rem;
+        border-radius: 0.25rem;
+      }
+    }
+  }
+
+  .grid-h {
+    margin-top: 1.5rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .table-responsive {
+    margin-top: 1rem;
+  }
+
+  .mat-column {
+    max-width: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; /* Thêm dấu '...' khi văn bản dài */
+  }
+}
+.mat-column-streamUrl {
+  max-width: 200px; /* Giới hạn chiều rộng */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; /* Thêm dấu '...' khi văn bản dài */
+}
+
+td.mat-cell {
+  padding: 8px;
+}

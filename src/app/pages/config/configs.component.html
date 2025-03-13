@@ -1,0 +1,161 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Home Page</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="formHome" class="form-horizontal" (submit)="onSubmit()">
+          <div class="form-group row">
+            <label for="inputHomeCreator" class="label col-sm-3 form-control-label">Creator</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputHomeCreator" formControlName="creator" placeholder="creator">
+              <div *ngIf="formHome.get('creator')?.invalid && formHome.get('creator')?.touched" class="text-danger">
+                Creator is required.
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label for="inputHomeTitle" class="label col-sm-3 form-control-label">Title</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputHomeTitle" formControlName="title" placeholder="title">
+              <div *ngIf="formHome.get('title')?.invalid && formHome.get('title')?.touched" class="text-danger">
+                Title is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputHomePublisher" class="label col-sm-3 form-control-label">Publisher</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputHomePublisher" formControlName="publisher" placeholder="publisher">
+              <div *ngIf="formHome.get('publisher')?.invalid && formHome.get('publisher')?.touched" class="text-danger">
+                Publisher is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputHomeDescription" class="label col-sm-3 form-control-label">Description</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputHomeDescription" formControlName="description" placeholder="description">
+              <div *ngIf="formHome.get('description')?.invalid && formHome.get('description')?.touched" class="text-danger">
+                Description is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputHomeImageUrl" class="label col-sm-3 form-control-label">Image Url</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputHomeImageUrl" formControlName="imageUrl" placeholder="image url">
+              <div *ngIf="formHome.get('imageUrl')?.invalid && formHome.get('imageUrl')?.touched" class="text-danger">
+                Image url is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputHomeUrl" class="label col-sm-3 form-control-label">Url</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputHomeUrl" formControlName="url" placeholder="url">
+              <div *ngIf="formHome.get('url')?.invalid && formHome.get('url')?.touched" class="text-danger">
+                Url is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputHomeIconUrl" class="label col-sm-3 form-control-label">Icon Url</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputHomeIconUrl" formControlName="iconUrl" placeholder="icon url">
+              <div *ngIf="formHome.get('iconUrl')?.invalid && formHome.get('iconUrl')?.touched" class="text-danger">
+                Icon url is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <button type="submit" nbButton status="warning">Submit</button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>New Page</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="formNew" class="form-horizontal" (submit)="onSubmit()">
+          <div class="form-group row">
+            <label for="inputNewCreator" class="label col-sm-3 form-control-label">Creator</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputNewCreator" formControlName="creator" placeholder="creator">
+              <div *ngIf="formNew.get('creator')?.invalid && formNew.get('creator')?.touched" class="text-danger">
+                Creator is required.
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label for="inputNewTitle" class="label col-sm-3 form-control-label">Title</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputNewTitle" formControlName="title" placeholder="title">
+              <div *ngIf="formNew.get('title')?.invalid && formNew.get('title')?.touched" class="text-danger">
+                Title is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputNewPublisher" class="label col-sm-3 form-control-label">Publisher</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputNewPublisher" formControlName="publisher" placeholder="publisher">
+              <div *ngIf="formNew.get('publisher')?.invalid && formNew.get('publisher')?.touched" class="text-danger">
+                Publisher is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputNewDescription" class="label col-sm-3 form-control-label">Description</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputNewDescription" formControlName="description" placeholder="description">
+              <div *ngIf="formNew.get('description')?.invalid && formNew.get('description')?.touched" class="text-danger">
+                Description is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputNewImageUrl" class="label col-sm-3 form-control-label">Image Url</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputNewImageUrl" formControlName="imageUrl" placeholder="image url">
+              <div *ngIf="formNew.get('imageUrl')?.invalid && formNew.get('imageUrl')?.touched" class="text-danger">
+                Image url is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputNewUrl" class="label col-sm-3 form-control-label">Url</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputNewUrl" formControlName="url" placeholder="url">
+              <div *ngIf="formNew.get('url')?.invalid && formNew.get('url')?.touched" class="text-danger">
+                Url is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputNewIconUrl" class="label col-sm-3 form-control-label">Icon Url</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="inputNewIconUrl" formControlName="iconUrl" placeholder="icon url">
+              <div *ngIf="formNew.get('iconUrl')?.invalid && formNew.get('iconUrl')?.touched" class="text-danger">
+                Icon url is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <button type="submit" nbButton status="warning">Submit</button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

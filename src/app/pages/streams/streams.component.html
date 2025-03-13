@@ -1,0 +1,40 @@
+<div>
+<button mat-flat-button class="add-stream" (click)="onAddStream()">Add stream</button>
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+       class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      Name
+    </th>
+    <td mat-cell *matCellDef="let element" class="mat-column" matTooltip="{{element.name}}"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="group">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by group">
+      Group
+    </th>
+    <td mat-cell *matCellDef="let element" class="mat-column" matTooltip="{{element.group}}"> {{element.group}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="startTime" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by start time">
+      Start time (UTC)
+    </th>
+    <td mat-cell *matCellDef="let element" class="mat-column" matTooltip="{{element.startTime}}"> {{element.startTime}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>
+      Action
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <nb-icon style="cursor: pointer" icon="info-outline" status="info" class="mr-4" title="Detail" (click)="onDetail(element)"></nb-icon>
+      <nb-icon style="cursor: pointer" icon="edit" status="primary" class="mr-4" title="Edit" (click)="onEditStream(element)"></nb-icon>
+      <nb-icon style="cursor: pointer" icon="trash-2-outline" status="danger" title="Delete" (click)="onDelete(element)"></nb-icon>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
